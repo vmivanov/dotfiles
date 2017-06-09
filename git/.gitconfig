@@ -1,0 +1,30 @@
+[core]
+    ; Character length of abbreviated object names (e.g. commitId)
+    abbrev = 8
+
+[credential]
+    ; Number of seconds to cache credentials
+    helper = cache --timeout=900
+
+[difftool]
+    ; Do not prompt before each invocation
+    prompt = false
+
+[log]
+    ; Display shortened commit IDs
+    abbrevCommit = true
+
+[pull]
+    ; Rebase current branch onto upstream branch by default
+    ; Set to false to use 'merge'
+    rebase = true
+
+[user]
+    ; Disable user auto-detection
+    useConfigOnly = true
+
+[include]
+    ; Include host-specific config
+    path = ~/.gitconfig.local
+
+; vim: ft=gitconfig ts=4 sts=4 sw=4 et
