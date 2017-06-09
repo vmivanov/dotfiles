@@ -1,0 +1,25 @@
+[credential]
+    ; Number of seconds to cache credentials
+    helper = cache --timeout=900
+
+[difftool]
+    ; Do not prompt before each invocation
+    prompt = false
+
+[log]
+    ; Display shortened commit IDs
+    abbrevCommit = true
+
+[pull]
+    ; Merge current branch into upstream branch
+    rebase = false
+
+[user]
+    ; Disable user auto-detection
+    useConfigOnly = true
+
+[include]
+    ; Include host-specific config
+    path = ~/.gitconfig.local
+
+; vim: ft=gitconfig ts=4 sts=4 sw=4 et
