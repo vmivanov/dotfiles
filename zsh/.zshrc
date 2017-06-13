@@ -4,10 +4,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+# Powerlevel9k mode requires this to be set *before* the actual theme
+POWERLEVEL9K_MODE='awesome-fontconfig'
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,6 +57,7 @@ ZSH_THEME="agnoster"
 plugins=(
     git
     tmux
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,5 +105,34 @@ alias fgrep="fgrep --colour=auto"
 
 # List directories first in zsh completions
 zstyle ':completion:*' list-dirs-first true
+
+# Add extra space to fix cut-off icons in terminal emulators that don't handle
+# double-width glyphs well (e.g. Konsole)
+POWERLEVEL9K_BACKGROUND_JOBS_ICON=$'\uF013 '
+POWERLEVEL9K_HOME_ICON=$'\uF015 '
+POWERLEVEL9K_HOME_SUB_ICON=$'\uF07C '
+POWERLEVEL9K_FOLDER_ICON=$'\uF115 '
+POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\uF059 '
+POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\uF06A '
+POWERLEVEL9K_VCS_STAGED_ICON=$'\uF055 '
+POWERLEVEL9K_VCS_STASH_ICON=$'\uF01C '
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\uF01A '
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\uF01B '
+POWERLEVEL9K_VCS_TAG_ICON=$'\uF217 '
+POWERLEVEL9K_VCS_BOOKMARK_ICON=$'\uF27B '
+POWERLEVEL9K_VCS_COMMIT_ICON=$'\uF221 '
+POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
+POWERLEVEL9K_VCS_REMOTE_BRANCH_ICON=$'\u2192 '
+POWERLEVEL9K_VCS_GIT_ICON=$'\uF1D3 '
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=$'\uF113 '
+POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=$'\uF171 '
+POWERLEVEL9K_VCS_GIT_GITLAB_ICON=$'\uF296 '
+POWERLEVEL9K_LOCK_ICON=$'\UE138 '
+POWERLEVEL9K_EXECUTION_TIME_ICON=$'\uF253 '
+
+# Powerlevel9k theme config
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs)
 
 # vim: ft=zsh ts=4 sts=4 sw=4 tw=100 et
