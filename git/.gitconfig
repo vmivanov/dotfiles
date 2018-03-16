@@ -1,3 +1,6 @@
+[color]
+    ui = auto
+
 [credential]
     ; Number of seconds to cache credentials
     helper = cache --timeout=900
