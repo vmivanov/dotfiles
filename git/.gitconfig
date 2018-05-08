@@ -7,7 +7,7 @@
 
 [credential]
     ; Number of seconds to cache credentials
-    helper = cache --timeout=900
+    helper = cache --timeout=600
 
 [difftool]
     ; Do not prompt before each invocation
