@@ -105,7 +105,7 @@ fi
 setopt appendhistory
 
 # Sanity check wait before executing a 'rm *'
-setopt RM_STAR_WAIT
+#setopt RM_STAR_WAIT
 
 # Add colours to common commands
 alias ls="ls --color=auto -pvN --group-directories-first"
