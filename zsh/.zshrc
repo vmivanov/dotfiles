@@ -91,16 +91,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Include user local bindir to PATH
-if [ -d $HOME/.local/bin ]; then
-    export PATH=$PATH:$HOME/.local/bin
-fi
-
-# Include host-specific configuration if present
-if [ -f $HOME/.zshrc.local ]; then
-    source $HOME/.zshrc.local
-fi
-
 # Append history instead of overwriting
 setopt appendhistory
 
@@ -115,6 +105,20 @@ alias fgrep="fgrep --colour=auto"
 
 # List directories first in zsh completions
 zstyle ':completion:*' list-dirs-first true
+
+#
+# Include user local bindir to PATH
+#
+if [ -d $HOME/.local/bin ]; then
+    export PATH=$PATH:$HOME/.local/bin
+fi
+
+#
+# Include host-specific configuration if present
+#
+if [ -f $HOME/.zshrc.local ]; then
+    source $HOME/.zshrc.local
+fi
 
 # Add extra space to fix cut-off icons in terminal emulators that don't handle
 # double-width glyphs well (e.g. Konsole)
