@@ -87,16 +87,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Include user local bindir to PATH
-if [ -d $HOME/.local/bin ]; then
-    export PATH=$PATH:$HOME/.local/bin
-fi
-
-# Include host-specific configuration if present
-if [ -f $HOME/.zshrc.local ]; then
-    source $HOME/.zshrc.local
-fi
-
 # Append history instead of overwriting
 setopt appendhistory
 
@@ -104,13 +94,27 @@ setopt appendhistory
 #setopt RM_STAR_WAIT
 
 # Add colours to common commands
-alias ls="ls --color=auto -p --group-directories-first -N"
+alias ls="ls --color=auto -vpN --group-directories-first"
 alias grep="grep --colour=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
 
 # List directories first in zsh completions
 zstyle ':completion:*' list-dirs-first true
+
+#
+# Include user local bindir to PATH
+#
+if [ -d $HOME/.local/bin ]; then
+    export PATH=$PATH:$HOME/.local/bin
+fi
+
+#
+# Include host-specific configuration if present
+# 
+if [ -f $HOME/.zshrc.local ]; then
+    source $HOME/.zshrc.local
+fi
 
 # Add extra space to fix cut-off icons in terminal emulators that don't handle
 # double-width glyphs well (e.g. Konsole)
@@ -141,4 +145,4 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs)
 
-# vim: ft=zsh ts=4 sts=4 sw=4 et
+# vim: ft=zsh ts=4 sts=4 sw=4 tw=100 et
