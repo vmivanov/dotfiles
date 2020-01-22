@@ -41,7 +41,7 @@ HISTFILESIZE=2000
 #
 # Aliases
 #
-alias ls='ls --color=auto -p --group-directories-first -N'
+alias ls='ls --color=auto -v -p --group-directories-first -N'
 alias ll='ls -hl'
 alias la='ls -lAh'
 alias grep='grep --color=auto'
