@@ -12,9 +12,7 @@ fi
 #
 if [ -f /etc/bash/bashrc ]; then
     source /etc/bash/bashrc
-fi
-
-if [ -f /etc/bash.bashrc ]; then
+elif [ -f /etc/bash.bashrc ]; then
     source /etc/bash.bashrc
 fi
 
