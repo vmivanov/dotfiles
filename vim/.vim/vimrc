@@ -78,4 +78,12 @@ imap <C-@> <C-Space>
 " Remove trailing whitespace when saving files
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Fix bugged arrow keys with tmux
+if &term =~ '^screen'
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
 " vim: fenc=utf-8 ft=vim ts=4 sts=4 sw=4 et
