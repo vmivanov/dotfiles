@@ -116,9 +116,24 @@ if [ -f $HOME/.zshrc.local ]; then
     source $HOME/.zshrc.local
 fi
 
+#
 # Powerlevel10k theme config
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context anaconda virtualenv dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs)
+#
+typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+    root_indicator
+    context
+    anaconda
+    pyenv
+    virtualenv
+    dir
+    dir_writable
+    vcs
+)
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+    status
+    command_execution_time
+    background_jobs
+)
 
 # vim: ft=zsh ts=4 sts=4 sw=4 tw=100 et
