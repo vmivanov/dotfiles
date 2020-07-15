@@ -123,15 +123,18 @@ fi
 #
 # Powerlevel10k theme config
 #
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     root_indicator
     context
+    anaconda
+    pyenv
+    virtualenv
     dir
     dir_writable
     vcs
 )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     status
     command_execution_time
     background_jobs
