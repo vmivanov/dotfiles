@@ -5,7 +5,7 @@
 export ZSH=~/.oh-my-zsh
 
 # Powerlevel10k mode requires this to be set *before* the actual theme
-POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='fontconfig'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
