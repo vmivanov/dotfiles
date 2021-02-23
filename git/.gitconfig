@@ -13,6 +13,11 @@
     ; Do not prompt before each invocation
     prompt = false
 
+[fetch]
+    ; Prune remote references that have been deleted upstream
+    prune = true
+    pruneTags = true
+
 [log]
     ; Display shortened commit IDs
     abbrevCommit = true
