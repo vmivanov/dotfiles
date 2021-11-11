@@ -98,10 +98,15 @@ setopt appendhistory
 #setopt RM_STAR_WAIT
 
 # Add colours to common commands
-alias ls="ls --color=auto -pvN --group-directories-first"
-alias grep="grep --colour=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
-alias egrep="egrep --colour=auto"
-alias fgrep="fgrep --colour=auto"
+MACOS_USE_GNU_COREUTILS=1
+if [[ $OSTYPE == 'darwin'* && $MACOS_USE_GNU_COREUTILS ]]; then
+    alias ls="gls --color=auto -pvN --group-directories-first"
+elif [[ $OSTYPE != 'darwin'* ]]; then
+    alias ls="ls --color=auto -pvN --group-directories-first"
+    alias grep="grep --colour=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
+    alias egrep="egrep --colour=auto"
+    alias fgrep="fgrep --colour=auto"
+fi
 
 # List directories first in zsh completions
 zstyle ':completion:*' list-dirs-first true
