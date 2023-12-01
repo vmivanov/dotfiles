@@ -56,6 +56,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux zsh-autosuggestions)
 
+# zsh-completions plugin should be added to $fpath and before oh-my-zsh.sh is
+# sourced instead of being added to $plugins.
+# For details see: https://github.com/zsh-users/zsh-completions/issues/603
+if [ -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions ]; then
+    fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
