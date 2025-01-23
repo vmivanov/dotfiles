@@ -58,6 +58,7 @@ plugins=(
     git
     tmux
     zsh-autosuggestions
+    zsh-completions
 )
 
 # zsh-completions plugin should be added to $fpath and before oh-my-zsh.sh is
