@@ -1,23 +1,24 @@
 " Automatically install vim-plug, if not already present
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Initialise vim-plug for plugin management
-call plug#begin('~/.vim/plugged')
+call plug#begin()
     " Plugin: airline
-    Plug 'https://github.com/vim-airline/vim-airline.git'
-    Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
     " Plugin: colorschemes
-    Plug 'https://github.com/flazz/vim-colorschemes.git'
+    Plug 'flazz/vim-colorschemes'
 
     " Plugin: fugitive
-    Plug 'https://github.com/tpope/vim-fugitive.git'
+    Plug 'tpope/vim-fugitive'
 
     " Plugin: syntastic
-    Plug 'https://github.com/vim-syntastic/syntastic.git'
+    Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " Plugin config: vim-airline
