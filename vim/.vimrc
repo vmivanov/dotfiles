@@ -17,23 +17,16 @@ call plug#begin()
     " Plugin: fugitive
     Plug 'tpope/vim-fugitive'
 
-    " Plugin: syntastic
-    Plug 'vim-syntastic/syntastic'
+    " Plugin: A.L.E. (Asynchronous Lint Engine)
+    Plug 'dense-analysis/ale'
 call plug#end()
 
 " Plugin config: vim-airline
 let g:airline_powerline_fonts = 1               " Use powerline symbols
 let g:airline#extensions#tabline#enabled = 1    " Enable tabline
 
-" Plugin config: syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Plugin config: A.L.E.
+let g:airline#extensions#ale#enabled = 1        " Enable integration with Airline
 
 " Theme config: solarized
 let g:solarized_termcolors = 256
