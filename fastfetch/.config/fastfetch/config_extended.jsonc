@@ -1,0 +1,136 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "display": {
+    "key": {
+      "type": "string",
+      "width": 14
+    },
+    "size": {
+      "maxPrefix": "MB",
+      "ndigits": 0
+    },
+    "temp": {
+      "unit": "C"
+    },
+    "percent": {
+      "type": ["num", "bar", "num-color"]
+    },
+    "bar": {
+      "charElapsed": "◼",
+      "charTotal": "-",
+      "borderLeft": "▸",
+      "borderRight": "◂"
+    }
+  },
+  "logo": {
+    "preserveAspectRatio": true,
+    "padding": {
+      "left": 2,
+      "right": 2
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "fqdn": true,
+      "format": "This is {host-name-colored}"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#keys}▾{#} System"
+    },
+    {
+      "type": "uptime",
+      "key": "├ Uptime"
+    },
+    {
+      "type": "os",
+      "key": "├ OS",
+      "format": "{name}{?version-id} {version-id}{?}{?codename} ({codename}){?}{?arch} • {arch}{?}"
+    },
+    {
+      "type": "kernel",
+      "key": "├ Kernel",
+      "format": "{?release}{release}{?}"
+    },
+    {
+      "type": "host",
+      "key": "├ Host",
+      "format": "{?vendor}{vendor} {?}{?name}{name} {?}{?version}{version}{?}"
+    },
+    {
+      "type": "cpu",
+      "key": "├ CPU",
+      "temp": true
+    },
+    {
+      "type": "gpu",
+      "key": "├ GPU",
+      "temp": true
+    },
+    {
+      "type": "memory",
+      "key": "├ Memory"
+    },
+    {
+      "type": "swap",
+      "key": "├ Swap"
+    },
+    {
+      "type": "loadavg",
+      "key": "├ Load"
+    },
+    {
+      "type": "processes",
+      "key": "└ Processes"
+    },
+    {
+      "type": "custom",
+      "format": "{#keys}▾{#} Desktop"
+    },
+    {
+      "type": "de",
+      "key": "├ DE"
+    },
+    {
+      "type": "wm",
+      "key": "├ WM"
+    },
+    {
+      "type": "wmTheme",
+      "key": "└ WM Theme"
+    },
+    {
+      "type": "custom",
+      "format": "{#keys}▾{#} Other"
+    },
+    {
+      "type": "packages",
+      "key": "├ Packages"
+    },
+    {
+      "type": "locale",
+      "key": "├ Locale"
+    },
+    {
+      "type": "shell",
+      "key": "├ Shell"
+    },
+    {
+      "type": "battery",
+      "key": "├ Battery"
+    },
+    {
+      "type": "powerAdapter",
+      "key": "├ AC Adapter"
+    },
+    {
+      "type": "colors",
+      "key": "└ Colours",
+      "symbol": "circle"
+    }
+  ]
+}
+
+// vim: ts=2 sts=2 sw=2 et
