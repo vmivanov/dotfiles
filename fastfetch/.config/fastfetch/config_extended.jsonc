@@ -16,10 +16,14 @@
       "type": ["num", "bar", "num-color"]
     },
     "bar": {
-      "charElapsed": "◼",
-      "charTotal": "-",
-      "borderLeft": "▸",
-      "borderRight": "◂"
+      "char": {
+        "elapsed": "◼",
+        "total": "-"
+      },
+      "border": {
+        "left": "▸",
+        "right": "◂"
+      }
     }
   },
   "logo": {
